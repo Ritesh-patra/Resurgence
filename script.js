@@ -52,8 +52,6 @@ function mouseeAnimaation() {
 
 mouseeAnimaation();
 
-
-
 var tl = gsap.timeline({
   scrollTrigger: {
     scroller: "#main",
@@ -117,31 +115,34 @@ var tl4 = gsap.timeline({
   scrollTrigger: {
     scroller: "#main",
     trigger: "#page2",
-    start: "0% 25%",
-    end: "0% 5%",
+    start: "0% 35%",
+    end: "0% 25%",
     // markers: true,
-    scrub: 1,
+    scrub: 4,
   },
 });
 
 tl4.to("#one h1",{
-  transform: `translateY(200%)`,
-  duration:2,
+  transform: `translateY(-200%)`,
+  delay:.4,
+  duration:3,
 },"same")
 
 tl4.to("#two h1",{
-  transform: `translateY(-100%)`,
-  duration:1.5,
+  transform: `translateY(-200%)`,
+  delay:.3,
+  duration:3,
 },"same")
 
 tl4.to("#three h1",{
-  transform: `translateY(-100%)`,
-  duration:1,
+  transform: `translateY(-200%)`,
+  delay:.2,
+  duration:3,
 },"same")
 
 tl4.to("#four h1",{
-  transform: `translateY(-100%)`,
-  duration:.5,
+  transform: `translateY(-200%)`,
+  duration:3,
 },"same")
 
 var loader = document.querySelector("#loader");
@@ -170,8 +171,8 @@ loader.addEventListener(
    
     setTimeout(() => {
       div.remove();
-    }, 500);
-  }, 50)
+    }, 200);
+  }, 10)
 );
 
 
@@ -188,12 +189,20 @@ setInterval(() => {
 
 var tl3 = gsap.timeline();
 tl3.to("#loader",{
-  delay:.3,
-  duration:1,
+  y:"-100%",
+  delay:.5,
+  duration:1.4,
 })
 
 tl3.to("#loader",{
+  opacity:0,
   display: "none",
+})
+
+tl3.to("#heading h1",{
+  transform: `translateY(0%)`,
+  stagger:.2
+
 })
 
 
@@ -233,5 +242,42 @@ gsap.to('#fimg', {
     start: 'top 120%',
     end: 'top 80%',
     scrub: true
+  }
+})
+
+gsap.to(".page7h1 h1",{
+  transform: `translateY(0%)`,
+  scrollTrigger: {
+    scroller:"#main",
+    trigger:"#page7 ",
+    start:"-150% 100%",
+    end:"-150% 90%"
+  }
+})
+
+gsap.to(".page10h1 h1",{
+  transform: `translateY(0%)`,
+  duration:.8,
+  stagger:.3,
+  scrollTrigger: {
+    scroller:"#main",
+    // markers:true,
+    // scrub:true,  
+    trigger:"#page10 ",
+    start:"-30% 100%",
+    end:"-30% 80%"
+  }
+})
+
+gsap.to(".pageh1 h1",{
+  transform: `translateY(0%)`,
+  duration:.5,
+  scrollTrigger: {
+    scroller:"#main",
+    // markers:true,
+    // scrub:true,  
+    trigger:"#page",
+    start:"-80% 100%",
+    end:"-80% 80%"
   }
 })
