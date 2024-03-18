@@ -164,7 +164,7 @@ loader.addEventListener(
     div.style.left = dets.clientX + "px";
     div.style.top = dets.clientY + "px";
     var image = document.createElement("img");
-      image.setAttribute("src","images/image-5.jpg")
+      image.setAttribute("src","./images/image-5.jpg")
       div.appendChild(image);
     document.body.appendChild(div);
    
